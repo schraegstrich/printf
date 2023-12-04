@@ -6,12 +6,12 @@
 /*   By: lkirillo <lkirillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:31:33 by lkirillo          #+#    #+#             */
-/*   Updated: 2023/12/04 20:13:44 by lkirillo         ###   ########.fr       */
+/*   Updated: 2023/12/04 21:14:39 by lkirillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 int	ft_printf(const char *str, ...)
 {
@@ -23,6 +23,8 @@ int	ft_printf(const char *str, ...)
 
 	while (str && str[i])
 	{
+		//if (str[i] != '%')
+		//	i++;
 		if (str[i] == '%')
 		{
 			if (str[i] == '%' && str[i + 1] == '%')
@@ -45,8 +47,9 @@ int	ft_printf(const char *str, ...)
 	return (i);
 }
 
-int main ()
+/*int main ()
 {
-	ft_printf("Hello, %% %s %c %s ", "New", 'a', "World");
+	ft_printf(" %c", '0');
 	return (0);
 }
+*/
