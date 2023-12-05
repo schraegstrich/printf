@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkirillo <lkirillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 13:54:52 by lkirillo          #+#    #+#             */
-/*   Updated: 2023/12/04 20:10:07 by lkirillo         ###   ########.fr       */
+/*   Created: 2023/12/05 18:29:49 by lkirillo          #+#    #+#             */
+/*   Updated: 2023/12/05 21:19:01 by lkirillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@
 # include <stdarg.h>
 
 int		ft_printf(const char *str, ...);
-char	ft_printchar(va_list pchar);
-char	*ft_printstr(va_list pstr);
+int		ft_printchar(char p);
+int		ft_printstr(char *str);
+char	*ft_fake_itoa(unsigned int n);
+char	*ft_hex_itoa( unsigned int n);
+char	*ft_str_tolower(char *s);
 
 #endif

@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printstr.c                                      :+:      :+:    :+:   */
+/*   ft_str_tolower.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkirillo <lkirillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 20:02:27 by lkirillo          #+#    #+#             */
-/*   Updated: 2023/12/05 17:20:28 by lkirillo         ###   ########.fr       */
+/*   Created: 2023/12/05 21:11:13 by lkirillo          #+#    #+#             */
+/*   Updated: 2023/12/05 21:19:51 by lkirillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printstr(char *str)
+char	*ft_str_tolower(char *s)
 {
-	int		i;
+	int	i;
 
 	i = 0;
-	if (!str)
-		return (-1);
-	while (str[i] != '\0')
+	if (*s)
 	{
-		write(1, &str[i], 1);
-		i++;
+		while (s[i] != '\0')
+		{
+			if (s[i] >= 'A' && s[i] <= 'Z')
+				s[i] = (s[i] + 32);
+			i++;
+		}
 	}
-	return (i);
+	return (s);
 }
