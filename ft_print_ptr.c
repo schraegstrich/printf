@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hex_itoa.c                                      :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkirillo <lkirillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 17:42:19 by lkirillo          #+#    #+#             */
-/*   Updated: 2023/12/06 14:32:22 by lkirillo         ###   ########.fr       */
+/*   Created: 2023/12/06 14:27:58 by lkirillo          #+#    #+#             */
+/*   Updated: 2023/12/06 16:59:27 by lkirillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-static int	itoa_len(unsigned int n)
+static int	itoa_len(unsigned long long n)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ static int	itoa_len(unsigned int n)
 	return (i);
 }
 
-char	*ft_hex_itoa( unsigned int n)
+char	*ft_print_ptr(unsigned long long n)
 {
 	char	*str;
 	int		i;
@@ -39,7 +39,7 @@ char	*ft_hex_itoa( unsigned int n)
 	if (!str)
 		return (0);
 	str[i] = '\0';
-	while (n != 0)
+	while (i > 0)
 	{
 		i--;
 		temp = n % 16;
@@ -52,8 +52,11 @@ char	*ft_hex_itoa( unsigned int n)
 	return (str);
 }
 
-/*int main ()
-{
-	printf("%X", 0);
-	return (0);
-}*/
+// int main (void)
+// {
+
+// 	unsigned long long a = 1337;
+// 	char *res = ft_ptr_itoa(*(unsigned long long *)&a);
+// 	printf("Res1: %p\n", res);
+// 	printf("Res2: %p\n", &a);
+// }
