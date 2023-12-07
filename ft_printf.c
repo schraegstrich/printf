@@ -6,7 +6,7 @@
 /*   By: lkirillo <lkirillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:31:33 by lkirillo          #+#    #+#             */
-/*   Updated: 2023/12/06 22:42:19 by lkirillo         ###   ########.fr       */
+/*   Updated: 2023/12/07 13:57:06 by lkirillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,8 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			len += ft_losing_my_religion(str[i + 1], ptr);
 			i++;
+			len += ft_losing_my_religion(str[i], ptr);
 		}
 		else
 			len += write(1, &str[i], 1);
